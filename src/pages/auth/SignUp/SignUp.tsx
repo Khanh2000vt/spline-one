@@ -1,11 +1,12 @@
 import { CibFacebookIcon } from "@/assets";
-import Banner from "@/assets/banner-login.png";
 import { BaseButton, TextInput } from "@/components";
 import { Color } from "@/theme";
 import { Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import Banner from "@/assets/banner-login.png";
 import styled from "styled-components";
-export default function Login() {
+import { Path } from "@/constant";
+export const SignUp = () => {
   return (
     <Flex>
       <Flex flex={0.4} justifyContent="center" alignItems="center">
@@ -17,7 +18,7 @@ export default function Login() {
             lineHeight="57.6px"
             marginBottom="30px"
           >
-            Sign in
+            Register
           </Text>
           <Text
             fontSize="18px"
@@ -27,20 +28,12 @@ export default function Login() {
           >
             Welcome to NgaoduVietnam
           </Text>
-          <TextInput marginTop="65px" label="Email Address" />
-          <TextInput label="Password" type="password" />
-          <Flex alignSelf="flex-end">
-            <Link to="forgot">
-              <Text
-                color={Color.SubText}
-                fontSize="14px"
-                lineHeight="22px"
-                fontWeight={400}
-              >
-                Forgot password?
-              </Text>
-            </Link>
+          <Flex marginTop="65px">
+            <TextInput label="First Name" />
+            <TextInput label="Last Name" />
           </Flex>
+          <TextInput label="Email Address" />
+          <TextInput label="Password" type="password" />
           <BaseButton
             background={Color.CamFF7B42}
             color="#ffffff"
@@ -66,16 +59,16 @@ export default function Login() {
               color={Color.Gray686868}
               marginRight="8px"
             >
-              Don’t have an account?
+              Member already?
             </Text>
-            <Link to="sign-up">
+            <Link to={Path.HOME}>
               <Text
                 fontSize="16px"
                 lineHeight="21px"
                 fontWeight="400"
                 color={Color.CamFF7B42}
               >
-                Sign up
+                Sign in
               </Text>
             </Link>
           </Flex>
@@ -84,7 +77,7 @@ export default function Login() {
       <BannerImg src={Banner} />
     </Flex>
   );
-}
+};
 
 const BannerImg = styled.img`
   src: ${(p) => p.src};

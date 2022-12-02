@@ -1,19 +1,14 @@
-import { Home } from "@/pages";
-import { Login } from "@/pages/auth";
+import { Path } from "@/constant";
+import { Login, SignUp } from "@/pages";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
-  // {
-  //   path: "/",
-  //   element: <Home />,
-  //   children: [
-  //     {
-  //       // loader: teamLoader,
-  //     },
-  //   ],
-  // },
   {
-    path: "/",
+    path: Path.HOME,
     element: <Login />,
+  },
+  {
+    path: Path.SIGN_UP,
+    element: <SignUp />,
   },
 ]);

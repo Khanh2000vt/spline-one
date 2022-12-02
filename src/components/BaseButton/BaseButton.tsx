@@ -18,8 +18,12 @@ export const BaseButton = (props: ButtonProps) => {
     borderColor = "#ccd0d5",
     color = "#4b4f56",
     _active = {},
-    _focus = {},
-    _hover = {},
+    _focus = {
+      outline: "none",
+    },
+    _hover = {
+      opacity: 0.9,
+    },
     onClick = () => {},
     IconLeft,
     IconRight,
