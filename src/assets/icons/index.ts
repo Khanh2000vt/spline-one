@@ -3,3 +3,8 @@ export * from "./eye";
 export * from "./cib_facebook";
 export * from "./logo";
 export * from "./qoute";
+export * from "./facebook-icon";
+export * from "./instagram-icon";
+export * from "./twitter-icon";
+export * from "./address-icon";
+export * from "./email-icon";

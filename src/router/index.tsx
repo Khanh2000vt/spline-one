@@ -7,7 +7,6 @@ import { createBrowserRouter } from "react-router-dom";
 
 export const router = () => {
   const token = useSelector(selectAuth).token;
-  console.log("token: ", token);
   return createBrowserRouter([
     {
       path: Path.HOME,

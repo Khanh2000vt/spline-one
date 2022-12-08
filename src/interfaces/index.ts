@@ -4,3 +4,4 @@ export * from "./form";
 export * from "./input";
 export * from "./icon";
 export * from "./navBar";
+export * from "./contact";

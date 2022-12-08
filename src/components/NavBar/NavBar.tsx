@@ -1,10 +1,11 @@
 import { Logo } from "@/assets";
+import BannerHome from "@/assets/banner-home.png";
+import { dataPath } from "@/constant";
 import { INavItem, NavBarProps } from "@/interfaces";
+import { Color } from "@/theme";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import BannerHome from "@/assets/banner-home.png";
-import { Color } from "@/theme";
 interface ItemNavBarProps {
   item: INavItem;
 }
@@ -24,7 +25,7 @@ const ItemNavBar = ({ item }: ItemNavBarProps) => {
   };
 
   return (
-    <Box px="30px" bgColor="transparent">
+    <Box px="30px">
       <NavLink
         to={item.router}
         style={({ isActive }) => (isActive ? activeStyle : styleDefault)}
@@ -35,7 +36,7 @@ const ItemNavBar = ({ item }: ItemNavBarProps) => {
   );
 };
 
-export const NavBar = ({ data, indexSelect = 0 }: NavBarProps) => {
+export const NavBar = () => {
   return (
     <Box height="400px" position="relative">
       <Banner src={BannerHome} />
@@ -44,16 +45,15 @@ export const NavBar = ({ data, indexSelect = 0 }: NavBarProps) => {
         alignItems="center"
         px="165px"
         paddingTop="20px"
-        backgroundColor="transparent"
         position="absolute"
         left={0}
         right={0}
       >
-        <Box _hover={{ cursor: "pointer" }} backgroundColor="transparent">
-          <LogoApp />
+        <Box _hover={{ cursor: "pointer" }}>
+          <Logo />
         </Box>
-        <Flex backgroundColor="transparent">
-          {data.map((item) => (
+        <Flex>
+          {dataPath.map((item) => (
             <ItemNavBar item={item} key={item.id} />
           ))}
         </Flex>
@@ -62,7 +62,7 @@ export const NavBar = ({ data, indexSelect = 0 }: NavBarProps) => {
         position="absolute"
         left="50%"
         top="50%"
-        backgroundColor="transparent"
+        transform="translate(-50%, -50%)"
         color={Color.White}
         fontWeight="500"
         fontSize="60px"
@@ -74,10 +74,6 @@ export const NavBar = ({ data, indexSelect = 0 }: NavBarProps) => {
   );
 };
 
-const LogoApp = styled(Logo)`
-  background-color: transparent;
-`;
-
 const Banner = styled.img`
   src: ${(p) => p.src};
   width: 100%;
@@ -85,12 +81,3 @@ const Banner = styled.img`
   object-fit: cover;
   position: absolute;
 `;
-
-//  <Box
-// position="absolute"
-// >
-
-{
-  /* <Banner src={BannerHome} /> */
-}
-// </Box>;

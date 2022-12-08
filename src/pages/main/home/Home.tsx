@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { Box, Text } from "@chakra-ui/react";
 export function Home() {
   return (
-    <Box position="relative">
+    <Box>
       {/* <Text position="absolute" left="50%" top="50%">
         About Us
       </Text>
