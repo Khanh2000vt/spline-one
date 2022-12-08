@@ -1,11 +1,22 @@
 import { CibFacebookIcon } from "@/assets";
 import Banner from "@/assets/banner-login.png";
 import { BaseButton, TextInput } from "@/components";
+import { loginAuth } from "@/redux/slices/auth";
 import { Color } from "@/theme";
 import { Flex, Text } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 export default function Login() {
+  const dispatch = useDispatch();
+
+  const handleSignIn = () => {
+    const param = {
+      token: "token-fake",
+    };
+    dispatch(loginAuth(param));
+  };
+
   return (
     <Flex>
       <Flex flex={0.4} justifyContent="center" alignItems="center">
@@ -45,6 +56,7 @@ export default function Login() {
             background={Color.CamFF7B42}
             color="#ffffff"
             marginY="32px"
+            onClick={handleSignIn}
           >
             Sign in
           </BaseButton>

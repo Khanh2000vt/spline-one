@@ -5,4 +5,5 @@ export const Color = {
   CamFF7B42: "#FF7B42",
   Blue4E86DB: "#4E86DB",
   Gray686868: "#686868",
+  White: "#FFFFFF",
 };
